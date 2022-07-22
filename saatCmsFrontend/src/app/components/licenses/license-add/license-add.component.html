@@ -1,0 +1,15 @@
+<div class="input-group">
+  <span class="input-group-text">name</span>
+  <input type="text" aria-label="First name" class="form-control" #txtName />
+</div>
+<div class="input-group">
+  <span class="input-group-text">startTime</span>
+  <input type="text" aria-label="First name" class="form-control" #txtStartTime />
+</div>
+<div class="input-group">
+  <span class="input-group-text">endTime</span>
+  <input type="text" aria-label="First name" class="form-control" #txtEndTime>
+</div>
+
+<button type="button" (click)="addLicense(txtName , txtStartTime , txtEndTime)"
+class="btn btn-primary">add new license</button>

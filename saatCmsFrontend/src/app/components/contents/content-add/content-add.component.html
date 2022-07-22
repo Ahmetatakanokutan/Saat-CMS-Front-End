@@ -1,0 +1,17 @@
+
+
+<div class="input-group">
+  <span class="input-group-text">name</span>
+  <input type="text" aria-label="First name" class="form-control" #txtupdatedName />
+</div>
+<div class="input-group">
+  <span class="input-group-text">posterUrl</span>
+  <input type="text" aria-label="First name" class="form-control" #txtposterUrl />
+</div>
+<div class="input-group">
+  <span class="input-group-text">videoUrl</span>
+  <input type="text" aria-label="First name" class="form-control" #txtvideoUrl>
+</div>
+
+<button type="button" (click)="addNewContent(txtupdatedName ,txtposterUrl ,txtvideoUrl)"
+class="btn btn-primary">add new content</button>

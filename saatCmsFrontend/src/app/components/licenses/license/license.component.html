@@ -1,0 +1,8 @@
+<div style="margin-top: 5cm; margin-left: 85mm; margin-right: 8cm;">name | start time | end time</div>
+<ul style=" margin-left: 8cm; margin-right: 8cm;" class="list-group">
+  <div *ngFor="let license of licenses">
+    <li (click)="addLicenseToContent(license.id)"  class="list-group-item">{{license.name}} | {{license.startTime}} | {{license.endTime}}</li>
+  </div>
+
+
+</ul>

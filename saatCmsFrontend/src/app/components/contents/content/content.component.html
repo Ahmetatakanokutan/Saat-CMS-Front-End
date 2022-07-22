@@ -1,0 +1,73 @@
+<style type="text/css">
+  .table {
+    margin: 5cm auto;
+    width: 100%;
+  }
+</style>
+<div class="table-responsive">
+<table class="table table-striped table-hover">
+  <thead >
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">content name</th>
+      <th scope="col">status</th>
+      <th scope="col" style=>licence names</th>
+      <th scope="col">watch</th>
+      <th scope="col">update</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody class="tbody:300px;overflow-y:scroll">
+    <tr *ngFor="let content of contents">
+
+      <th>{{ content.id }}</th>
+      <td>{{ content.name }}</td>
+      <td>{{ content.status }}</td>
+      <td >
+        <div *ngFor="let license of content.licenses">
+          {{ license.name }} ,
+        </div></td>
+      <td >
+        <button *ngIf="content.status == 'Published';else inProgress"
+          routerLink="getVideo/{{ content.id }}"
+          type="button"
+          class="btn btn-primary"
+        >
+          watch
+        </button>
+      </td>
+
+      <td>
+        <button
+          routerLink="update/{{ content.id }}"
+          type="button"
+          class="btn btn-success"
+        >
+          update
+        </button>
+      </td>
+      <td>
+        <button
+
+          (click)="deleteContent(content.id)"
+
+          type="button"
+          class="btn btn-danger"
+        >
+          delete
+        </button>
+      </td>
+      <ng-template #inProgress>
+        <button
+        type="button"
+        class="btn btn-danger"
+      >
+        you cannot watch
+      </button>
+      </ng-template>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
